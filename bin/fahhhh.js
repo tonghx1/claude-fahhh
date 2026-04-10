@@ -75,12 +75,6 @@ function install() {
       "",
     ].join("\n")
   );
-
-  The FAHHH buzzer will play when you submit
-  a frustrated prompt (profanity, complaints, rage).
-
-  To uninstall: fahhh uninstall
-`);
 }
 
 function uninstall() {
