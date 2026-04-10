@@ -1,0 +1,25 @@
+{
+  "name": "claude-code-fahhhh",
+  "version": "1.0.0",
+  "description": "Plays a FAHHHH buzzer sound when Claude Code gives a negative response",
+  "main": "lib/hook.js",
+  "bin": {
+    "fahhhh": "bin/fahhhh.js"
+  },
+  "scripts": {
+    "postinstall": "node lib/generate-sound.js",
+    "generate-sound": "node lib/generate-sound.js"
+  },
+  "keywords": [
+    "claude-code",
+    "hook",
+    "sound",
+    "buzzer",
+    "fahhhh"
+  ],
+  "license": "MIT",
+  "files": [
+    "bin/",
+    "lib/"
+  ]
+}
