@@ -18,9 +18,19 @@
     "fahhh",
     "frustration"
   ],
+  "author": "tonghx1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tonghx1/claude-fahhh.git"
+  },
+  "homepage": "https://github.com/tonghx1/claude-fahhh",
+  "bugs": {
+    "url": "https://github.com/tonghx1/claude-fahhh/issues"
+  },
   "license": "MIT",
   "files": [
     "bin/",
-    "lib/"
+    "lib/",
+    "LICENSE"
   ]
 }
