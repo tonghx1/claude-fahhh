@@ -100,7 +100,7 @@ function uninstall() {
 
 function test() {
   console.log("Playing FAHHHH sound...");
-  const soundPath = path.join(__dirname, "..", "lib", "fahhhh.wav");
+  const soundPath = path.join(__dirname, "..", "lib", "fahhhh.mp3");
   if (!fs.existsSync(soundPath)) {
     console.log("Sound file not found. Generating...");
     require("../lib/generate-sound");
