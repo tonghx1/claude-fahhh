@@ -1,6 +1,6 @@
 {
   "name": "claude-fahhh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plays a FAHHH buzzer sound when you submit a frustrated prompt in Claude Code",
   "main": "lib/hook.js",
   "bin": {

@@ -57,15 +57,24 @@ function install() {
   settings.hooks.UserPromptSubmit.push(HOOK_ENTRY);
   writeSettings(settings);
 
-  console.log(`
-  ____  _   _  _ _  _ _
- |  __|| | | || | || | |
- | |__ | |_| || |_|| |_
- |  __||  _  ||  _||  _|
- | |   | | | || | | | |
- |_|   |_| |_||_| |_|
-
-  Installed! Restart Claude Code to activate.
+  console.log(
+    [
+      "",
+      " ███████  █████  ██   ██ ██   ██ ██   ██",
+      " ██      ██   ██ ██   ██ ██   ██ ██   ██",
+      " █████   ███████ ███████ ███████ ███████",
+      " ██      ██   ██ ██   ██ ██   ██ ██   ██",
+      " ██      ██   ██ ██   ██ ██   ██ ██   ██",
+      "",
+      "  Installed! Restart Claude Code to activate.",
+      "",
+      "  The FAHHH buzzer will play when you submit",
+      "  a frustrated prompt (profanity, complaints, rage).",
+      "",
+      "  To uninstall: fahhh uninstall",
+      "",
+    ].join("\n")
+  );
 
   The FAHHH buzzer will play when you submit
   a frustrated prompt (profanity, complaints, rage).
