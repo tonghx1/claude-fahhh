@@ -39,68 +39,68 @@ function writeSettings(settings) {
 }
 
 function isOurHook(hook) {
-  return hook.hooks?.some((h) => h.command?.includes("claude-code-fahhhh"));
+  return hook.hooks?.some((h) => h.command?.includes("claude-fahhh"));
 }
 
 function install() {
   const settings = readSettings();
 
   if (!settings.hooks) settings.hooks = {};
-  if (!settings.hooks.Stop) settings.hooks.Stop = [];
+  if (!settings.hooks.UserPromptSubmit) settings.hooks.UserPromptSubmit = [];
 
   // Check if already installed
-  if (settings.hooks.Stop.some(isOurHook)) {
-    console.log("FAHHHH is already installed!");
+  if (settings.hooks.UserPromptSubmit.some(isOurHook)) {
+    console.log("FAHHH is already installed!");
     return;
   }
 
-  settings.hooks.Stop.push(HOOK_ENTRY);
+  settings.hooks.UserPromptSubmit.push(HOOK_ENTRY);
   writeSettings(settings);
 
   console.log(`
-  ____  _   _  _ _  _ _  _
- |  __|| | | || | || | || |
- | |__ | |_| || |_|| |_|| |_
- |  __||  _  ||  _||  _||  _|
- | |   | | | || | | | |  | |
- |_|   |_| |_||_| |_|   |_|
+  ____  _   _  _ _  _ _
+ |  __|| | | || | || | |
+ | |__ | |_| || |_|| |_
+ |  __||  _  ||  _||  _|
+ | |   | | | || | | | |
+ |_|   |_| |_||_| |_|
 
   Installed! Restart Claude Code to activate.
 
-  The FAHHHH buzzer will play when Claude gives
-  a negative response (errors, refusals, failures).
+  The FAHHH buzzer will play when you submit
+  a frustrated prompt (profanity, complaints, rage).
 
-  To uninstall: fahhhh uninstall
+  To uninstall: fahhh uninstall
 `);
 }
 
 function uninstall() {
   const settings = readSettings();
 
-  if (!settings.hooks?.Stop) {
-    console.log("FAHHHH is not installed.");
+  if (!settings.hooks?.UserPromptSubmit) {
+    console.log("FAHHH is not installed.");
     return;
   }
 
-  const before = settings.hooks.Stop.length;
-  settings.hooks.Stop = settings.hooks.Stop.filter((h) => !isOurHook(h));
-  const after = settings.hooks.Stop.length;
+  const before = settings.hooks.UserPromptSubmit.length;
+  settings.hooks.UserPromptSubmit = settings.hooks.UserPromptSubmit.filter((h) => !isOurHook(h));
+  const after = settings.hooks.UserPromptSubmit.length;
 
-  if (settings.hooks.Stop.length === 0) delete settings.hooks.Stop;
+  if (settings.hooks.UserPromptSubmit.length === 0) delete settings.hooks.UserPromptSubmit;
   if (Object.keys(settings.hooks).length === 0) delete settings.hooks;
 
   writeSettings(settings);
 
   if (before !== after) {
-    console.log("FAHHHH uninstalled. Restart Claude Code to take effect.");
+    console.log("FAHHH uninstalled. Restart Claude Code to take effect.");
   } else {
-    console.log("FAHHHH was not installed.");
+    console.log("FAHHH was not installed.");
   }
 }
 
 function test() {
-  console.log("Playing FAHHHH sound...");
-  const soundPath = path.join(__dirname, "..", "lib", "fahhhh.mp3");
+  console.log("Playing FAHHH sound...");
+  const soundPath = path.join(__dirname, "..", "lib", "fahhh.mp3");
   if (!fs.existsSync(soundPath)) {
     console.log("Sound file not found. Generating...");
     require("../lib/generate-sound");
@@ -122,7 +122,7 @@ function test() {
         `(New-Object Media.SoundPlayer '${soundPath}').PlaySync()`,
       ]);
     }
-    console.log("Did you hear the FAHHHH?");
+    console.log("Did you hear the FAHHH?");
   } catch (e) {
     console.error("Could not play sound:", e.message);
   }
@@ -130,8 +130,8 @@ function test() {
 
 function status() {
   const settings = readSettings();
-  const installed = settings.hooks?.Stop?.some(isOurHook);
-  console.log(installed ? "FAHHHH is installed and active." : "FAHHHH is not installed. Run: fahhhh install");
+  const installed = settings.hooks?.UserPromptSubmit?.some(isOurHook);
+  console.log(installed ? "FAHHH is installed and active." : "FAHHH is not installed. Run: fahhh install");
 }
 
 // CLI
@@ -153,12 +153,12 @@ switch (command) {
     break;
   default:
     console.log(`
-Usage: fahhhh <command>
+Usage: fahhh <command>
 
 Commands:
-  install     Add the FAHHHH hook to Claude Code
-  uninstall   Remove the FAHHHH hook
-  test        Play the FAHHHH sound to test it
-  status      Check if FAHHHH is installed
+  install     Add the FAHHH hook to Claude Code
+  uninstall   Remove the FAHHH hook
+  test        Play the FAHHH sound to test it
+  status      Check if FAHHH is installed
 `);
 }
